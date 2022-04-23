@@ -2,6 +2,11 @@ from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor
 from math import pi , atan2
 import matplotlib.pyplot as plt
 
+# This function uses the RangeBearingSensor to detect the position of obstacles
+def detect_obstacles(veh, map):
+    sensor = RangeBearingSensor(robot = veh, map = map ,animate=True)
+    readings = sensor.h(veh.x)
+    return readings
 
 anim = VehicleIcon('robot', scale = 2)
 
@@ -44,9 +49,8 @@ plt.plot(targetpos[0], targetpos[1], **target_marker_style)
 map = LandmarkMap(no_obstacles, 20)
 map.plot()
 
-#using the sensor to get the positions of the obstacles
-sensor = RangeBearingSensor(robot = veh, map = map ,animate=True)
-sensor_readings = sensor.h(veh.x)
+#using the detect_obstacles function to get the positions of the obstacles
+sensor_readings = detect_obstacles(veh, map)
 print(sensor_readings)
 
 
@@ -62,10 +66,12 @@ while(run):
                 
         # otherwise the robot will continue to move towards the target point
         else:
+            #calculating the target heading relevant to the robot position
             target_heading = atan2(
                 targetpos[1] - veh.x[1],
                 targetpos[0] - veh.x[0]
             )
+            #calculating the steering angle
             steer = target_heading-veh.x[2]
             if steer > pi:
                 steer = steer-2*pi
