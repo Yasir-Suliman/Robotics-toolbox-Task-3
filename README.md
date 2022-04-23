@@ -29,4 +29,7 @@ The way the code works is firstly a map is generated with obstacles using inputs
 
 ## Results
 ![Image of robot at target](/success.png)
+###### The green dot represents the target point.
+##### The black marks represent the obstacles.
+The Robot stops when it successfully reached the target position
 
