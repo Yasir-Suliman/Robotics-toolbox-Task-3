@@ -33,3 +33,5 @@ The way the code works is firstly a map is generated with obstacles using inputs
 ##### The black marks represent the obstacles.
 The Robot stops when it successfully reached the target position
 
+## Further Improvement
+The main problem in this code is when there is an obstacle within 3 units from the robot. Implementing a method where the robot can reverse itself and turn away from the obstacle.
