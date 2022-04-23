@@ -22,9 +22,11 @@ The User must specify the number of obstacles to be randomly generated on the ma
 2. Python 3: Any python version from 3.6 - 3.8.
 
 ## Code Explanation
-The way the code works is firstly a map is generated with obstacles using inputs from the user and the target position is identified. Then using the range bearing sensor the obstacles are identified and how far is the robot from them. If the there is no obstacles within 3 units of the robot then the robot starts calculating the steering angle to get to the target relevant to its position. The robot will keep moving until it reaches the target position. In the case where an obstacle is within 3 units of the robot then the robot will stop to avoid collision.
+The way the code works is firstly a map is generated with obstacles using inputs from the user and the target position is identified. Then using the range bearing sensor the obstacles are identified and how far is the robot from them. If the there is no obstacles within 3 units of the robot then the robot starts calculating the steering angle to get to the target relative to its position. The robot will keep moving until it reaches the target position. In the case where an obstacle is within 3 units of the robot then the robot will stop to avoid collision.
 
 #### Flowchart
-![Image of code output](/flowchart.png)
+![Image of flowchart](/flowchart.png)
 
-##
+## Results
+![Image of robot at target](/success.png)
+
